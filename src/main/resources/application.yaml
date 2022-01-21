@@ -1,0 +1,53 @@
+#  spring.jackson.serialization.fail-on-empty-beans=false
+spring:
+#  jackson:
+#    serialization:
+#      fail-on-empty-beans: false
+  main:
+    allow-circular-references: true
+  security:
+    oauth2:
+      client:
+        registration:
+          google:
+            client-id: 209659013475-sb08ag0l1ct3de4ulg09a3nbfpk5jcoq.apps.googleusercontent.com
+            client-secret: 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
+          kakao:
+            client-id: fa566365f546651d4760524d7620d71c
+            client-secret: V38zEmzxTNEocb72Iv7CsNgQDeZipm5E
+          naver:
+            client-id: ???? client-id key
+            client-secret: ???? client-secret key
+          facebook:
+            client-id: ???? client-id key
+            client-secret: ???? client-secret key
+  profiles:
+    include: oauth
+  datasource:
+    driver-class-name: org.h2.Driver
+    username: sa
+    url: jdbc:h2:tcp://localhost/~/test
+  jpa:
+    generate-ddl: true
+    hibernate:
+      ddl-auto: create
+    properties:
+      hibernate:
+        format_sql: true
+ #     show-sql: true
+
+
+logging.level:
+  org.hibernate.SQL: debug
+#  org.hibernate.type: trace
+
+decorator:
+  datasource:
+    p6spy:
+      enable-logging: false
+
+hanji:
+  app:
+    jwtExpirationMs: '60000'
+    jwtRefreshExpirationMs: '120000'
+    jwtSecret: hanjiSecretKeyhanjiSecretKeyhanjiSecretKeyhanjiSecretKeyhanjiSecretKeyhanjiSecretKeyhanjiSecretKeyhanjiSecretKeyhanjiSecretKeyhanjiSecretKeyhanjiSecretKeyhanjiSecretKeyhanjiSecretKeyhanjiSecretKeyhanjiSecretKeyhanjiSecretKey
